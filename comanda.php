@@ -546,10 +546,7 @@ if(isset($comanda_val)){
 												$quantitat = 0;
 												if(isset($_POST['modificar'])){
 													for( $i=0; $i<count($t_producte); $i++ ){
-														$con_nom_prod = "SELECT nom_producte FROM productors AS t1, producte AS t2 WHERE t1.id = t2.id_productor AND t2.id = ".$t_producte[$i];
-														$res_nom_prod = mysql_query($con_nom_prod) or die(mysql_error());
-														$nom_prod = mysql_fetch_array($res_nom_prod);
-														if($lin_prod->nom_producte == $nom_prod[0]){
+														if($lin_prod->id == $t_producte[$i]){
 															$quantitat = $t_quantitat[$i];
 														}
 													}
